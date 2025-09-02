@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import logo from "./assets/logo.png"; // Ensure you have a logo image in the assets folder
+import mainLogo from "./assets/mainlogo.png"; // Ensure you have a logo image in the assets folder
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +39,7 @@ export default function App() {
           {/* Logo */}
           <NavLink to="/">
             <img
-              src="https://perthfencingspecialists.au/wp-content/uploads/2025/07/150.png"
+              src={mainLogo}
               alt="Perth Fencing Specialists Logo"
               className="h-10 w-auto"
             />
