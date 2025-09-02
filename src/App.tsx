@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import NavLink from "./components/NavLink";
 
 import Home from "./pages/Home";
@@ -19,6 +19,8 @@ export default function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const links = ["Home", "Services", "ModularWalls", "Gallery", "About", "Contact"];
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
@@ -43,7 +45,7 @@ export default function App() {
 
           {/* Desktop Links */}
           <div className="space-x-6 hidden md:flex">
-            {["Home","Services","ModularWalls","Gallery","About","Contact"].map((link) => (
+            {links.map((link) => (
               <motion.div
                 key={link}
                 whileHover={{ y: -3, scale: 1.05 }}
@@ -68,25 +70,58 @@ export default function App() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="flex flex-col md:hidden bg-white shadow-lg"
-          >
-            {["Home","Services","ModularWalls®","Gallery","About","Contact"].map((link) => (
-              <NavLink
-                key={link}
-                to={`/${link === "Home" ? "" : link.toLowerCase()}`}
-                className="px-6 py-4 border-b hover:bg-green-50" 
+        <AnimatePresence>
+          {mobileOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black z-40"
                 onClick={() => setMobileOpen(false)}
+              />
+
+              {/* Sliding Panel */}
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white z-50 shadow-2xl p-6 flex flex-col"
               >
-                {link}
-              </NavLink>
-            ))}
-          </motion.div>
-        )}
+                {/* Close Button */}
+                <button
+                  className="self-end mb-6 text-2xl font-bold"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  ×
+                </button>
+
+                {/* Menu Links */}
+                <div className="flex flex-col space-y-4">
+                  {links.map((link, i) => (
+                    <motion.div
+                      key={link}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1, duration: 0.3 }}
+                      className="group"
+                    >
+                      <NavLink
+                        to={`/${link === "Home" ? "" : link.toLowerCase()}`}
+                        className="text-lg font-semibold px-4 py-2 rounded-md hover:bg-green-100 hover:text-green-700 transition-all duration-300"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {link}
+                      </NavLink>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </motion.nav>
 
       {/* Page Routes */}
