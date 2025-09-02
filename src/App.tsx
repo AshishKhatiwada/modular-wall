@@ -144,11 +144,13 @@ export default function App() {
         transition={{ duration: 1 }}
         className="bg-gray-900 text-gray-300 text-center py-6"
       >
-        <p><img
-        src={logo} 
-        alt="Perth Fencing Specialists Logo"
-        className="h-5 w-fit mx-auto md:mx-0"
-      />{new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
+        <img
+  src={logo}
+  alt="Perth Fencing Specialists Logo"
+  className="w-32 max-w-full h-auto mx-auto md:mx-0"
+/>
+
+        <p>{new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
       </motion.footer>
     </div>
   );

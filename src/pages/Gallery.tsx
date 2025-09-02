@@ -16,11 +16,14 @@ import img11 from "../assets/gallery/11.jpg";
 import img12 from "../assets/gallery/12.jpg";
 import img13 from "../assets/gallery/13.jpg";
 import img14 from "../assets/gallery/14.jpg";
+import img15 from "../assets/gallery/15.jpg";
+import img16 from "../assets/gallery/16.jpg";
+
 
 export default function Gallery() {
   const allImages = [
     img1, img2, img3, img4, img5, img6, img7,
-    img8, img9, img10, img11, img12, img13, img14
+    img8, img9, img10, img11, img12, img13, img14, img15, img16
   ];
 
   const [visibleCount, setVisibleCount] = useState(6); // initially show 6 images
