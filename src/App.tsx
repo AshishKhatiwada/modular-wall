@@ -79,7 +79,7 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.5 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black z-40"
+                className="fixed inset-0 bg-black text-white z-40"
                 onClick={() => setMobileOpen(false)}
               />
 
@@ -100,7 +100,7 @@ export default function App() {
                 </button>
 
                 {/* Menu Links */}
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-4 bg-gray-800 p-4 rounded-lg shadow-lg">
                   {links.map((link, i) => (
                     <motion.div
                       key={link}
@@ -111,7 +111,7 @@ export default function App() {
                     >
                       <NavLink
                         to={`/${link === "Home" ? "" : link.toLowerCase()}`}
-                        className="text-lg font-semibold px-4 py-2 rounded-md hover:bg-green-100 hover:text-green-700 transition-all duration-300"
+                        className="text-lg font-semibold text-white px-4 py-2 rounded-md hover:text-green-700 transition-all duration-300"
                         onClick={() => setMobileOpen(false)}
                       >
                         {link}
