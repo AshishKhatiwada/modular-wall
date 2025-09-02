@@ -49,7 +49,7 @@ export default function Home() {
         {/* Hero content */}
         <div className="relative text-center text-white px-4">
           <h1 className="text-5xl font-bold mb-6">
-            PERTH FENCING SPECIALISTS & MODULARWALLS SPECIALISTS
+            FENCING CONTRACTOR & MODULARWALL SPECIALISTS
           </h1>
           <p className="text-xl mb-6">GET IN TOUCH FOR A FREE QUOTE TODAY!</p>
           <div className="flex justify-center gap-4 mt-6">
