@@ -9,6 +9,7 @@ import ModularWalls from "./pages/ModularWalls";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import logo from "./assets/logo.png"; // Ensure you have a logo image in the assets folder
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -143,7 +144,11 @@ export default function App() {
         transition={{ duration: 1 }}
         className="bg-gray-900 text-gray-300 text-center py-6"
       >
-        <p>© {new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
+        <p><img
+        src={logo} 
+        alt="Perth Fencing Specialists Logo"
+        className="h-5 w-fit mx-auto md:mx-0"
+      />{new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
       </motion.footer>
     </div>
   );
