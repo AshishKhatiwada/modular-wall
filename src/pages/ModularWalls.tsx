@@ -61,7 +61,7 @@ export default function ModularWalls() {
         transition={{ duration: 0.8 }}
         className="text-3xl font-bold text-center mb-12"
       >
-        ModularWalls® in Perth Fencing– Stylish, Durable & Affordable
+        ModularWalls® in Perth Fencing <span className="text-green-600">Stylish, Durable & Affordable</span>
       </motion.h2>
 
       <div className="space-y-16">

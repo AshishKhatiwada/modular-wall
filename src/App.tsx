@@ -145,12 +145,18 @@ export default function App() {
         transition={{ duration: 1 }}
         className="bg-gray-900 text-gray-300 text-center py-6"
       >
+        <div className="mb-4 grid-col-2 gap-4 md:flex md:justify-center md:items-center space-y-4 md:space-y-0">
+          <img
+          src={logo}
+          alt="Perth Fencing Specialists Logo"
+          className="w-32 max-w-full h-auto mx-auto md:mx-0"
+        />
         <img
-  src={logo}
-  alt="Perth Fencing Specialists Logo"
-  className="w-32 max-w-full h-auto mx-auto md:mx-0"
-/>
-
+          src={mainLogo}
+          alt="Perth Fencing Specialists Logo"
+          className="w-32 max-w-full h-auto mx-auto md:mx-0"
+        />
+        </div>
         <p>{new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
       </motion.footer>
     </div>

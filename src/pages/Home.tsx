@@ -3,6 +3,7 @@ import modularWallsImg from "../assets/bac.jpg";
 import fencingImg from "../assets/fencing.webp";
 import securityImg from "../assets/security.webp";
 import installationImg from "../assets/installation.jpg";
+import { Phone, Mail } from "lucide-react";
 export default function Home() {
   const services = [
     {
@@ -58,16 +59,17 @@ export default function Home() {
               href="tel:+61412345678"
               className="border-2 border-green-600 text-white px-6 py-3 rounded-xl font-semibold inline-block bg-transparent hover:bg-green-600 hover:text-white transition-colors duration-300"
             >
-              Call Us
+              Call Us<Phone size={16} className="inline ml-2" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
               className="border-2 border-green-600 text-white px-6 py-3 rounded-xl font-semibold inline-block bg-transparent hover:bg-green-600 hover:text-white transition-colors duration-300"
               href="/contact"
             >
-              Get a Free Quote
+              Get a Free Quote<Mail size={16} className="inline ml-2" />
             </motion.a>
           </div>
+          
         </div>
       </motion.section>
 
@@ -115,7 +117,7 @@ export default function Home() {
       
       <section className="py-20 bg-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-12 text-gray-800">What We Do</h2>
+        <h2 className="text-3xl font-bold mb-12 text-gray-800">What We<span className="text-green-600"> Do </span></h2>
         <div className="w-24 h-1 bg-green-600 mx-auto my-6 rounded-full"></div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {services.map((service, index) => (

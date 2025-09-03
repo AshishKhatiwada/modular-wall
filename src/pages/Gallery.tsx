@@ -34,7 +34,7 @@ export default function Gallery() {
 
   return (
     <section className="py-16 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-10">Our Work</h2>
+      <h2 className="text-3xl font-bold text-center mb-10">Our<span className="text-green-600"> Work</span></h2>
 
       <div className="container mx-auto grid md:grid-cols-3 gap-6">
         {allImages.slice(0, visibleCount).map((img, i) => (
