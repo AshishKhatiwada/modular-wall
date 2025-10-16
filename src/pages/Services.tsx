@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 // Replace with your actual images (place them in assets folder)
+import heroImg from "../assets/pool.png"; // Hero image
 import colorbondImg from "../assets/colorbond.webp";
 import modularImg from "../assets/bac.jpg";
 import poolImg from "../assets/pool.png";
@@ -69,28 +70,33 @@ export default function Services() {
 
   return (
     <>
+      {/* 🌅 Hero Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden"
+      >
+        <img
+          src={heroImg}
+          alt="Services Hero"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="relative text-center text-white px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            Our <span className="text-green-400">Services</span>
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+           Modular Walls, Premium fencing, walls, gates, and asbestos removal solutions tailored for Perth homeowners and businesses.
+          </p>
+        </div>
+      </motion.section>
+
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 text-center">
-          {/* Section Heading */}
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
-          >
-            Our <span className="text-green-600">Services</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-600 max-w-2xl mx-auto mb-12"
-          >
-            We provide premium fencing solutions tailored to your needs – from
-            modern modular walls to pool fencing and durable Colorbond fences.
-          </motion.p>
-
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-10">
             {services.map((s, i) => (
@@ -102,7 +108,6 @@ export default function Services() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all text-center group overflow-hidden"
               >
-                {/* Service Image */}
                 <div className="h-48 w-full overflow-hidden">
                   <img
                     src={s.img}
@@ -111,7 +116,6 @@ export default function Services() {
                   />
                 </div>
 
-                {/* Card Content */}
                 <div className="p-8">
                   <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
                   <p className="text-gray-600">{s.desc}</p>
@@ -157,7 +161,6 @@ export default function Services() {
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 text-center">
-          {/* Section Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -167,11 +170,9 @@ export default function Services() {
             Why Customers Choose <span className="text-green-600">Perth Fencing Specialists</span>
           </motion.h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-            Perth Fencing Specialists is trusted by homeowners and businesses for reliable,
-            high-quality fencing and retaining wall solutions.
+            Trusted by homeowners and businesses for reliable, high-quality fencing and retaining wall solutions.
           </p>
 
-          {/* Reasons Grid */}
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             {reasons.map((reason, i) => (
               <motion.div
@@ -187,9 +188,8 @@ export default function Services() {
             ))}
           </div>
 
-          {/* Call to Action */}
           <motion.a
-            href="tel:0400000000" // Replace with your number
+            href="tel:0400000000"
             whileHover={{ scale: 1.05 }}
             className="inline-block bg-green-600 text-white px-8 py-4 rounded-full shadow-lg hover:bg-green-700 transition"
           >
