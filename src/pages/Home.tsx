@@ -3,6 +3,7 @@ import modularWallsImg from "../assets/bac.jpg";
 import fencingImg from "../assets/fencing.webp";
 import securityImg from "../assets/security.webp";
 import installationImg from "../assets/installation.jpg";
+
 import { Phone, Mail, ShieldCheck, Wrench, Clock, Award } from "lucide-react";
 
 export default function Home() {
@@ -70,16 +71,19 @@ export default function Home() {
         className="relative h-screen w-full flex items-center justify-center overflow-hidden"
       >
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover brightness-125"
           src="/assets/hero.mp4"
           autoPlay
           loop
           muted
           playsInline
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/50"></div>
 
         <div className="relative text-center text-white px-4 max-w-3xl">
+           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-red-600 animate-pulse">
+            PERTH
+           </h1>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             FENCING CONTRACTOR &{" "}
             <span className="text-green-400 animate-pulse">

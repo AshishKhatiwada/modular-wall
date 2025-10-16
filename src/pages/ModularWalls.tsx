@@ -90,7 +90,7 @@ export default function ModularWalls() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover brightness-50"
+          className="absolute inset-0 w-full h-full object-cover brightness-125"
         />
         <motion.div
           initial={{ opacity: 0, y: 40 }}

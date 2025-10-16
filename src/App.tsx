@@ -37,13 +37,14 @@ export default function App() {
       >
         <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
-       <NavLink to="/" className="flex items-center">
-  <img
-    src={mainLogo}
-    alt="Perth Fencing Specialists Logo"
-    className="h-12 md:h-16 w-auto object-contain"
-  />
-</NavLink>
+        <NavLink to="/" className="flex items-center">
+          <img
+            src={mainLogo}
+            alt="Perth Fencing Specialists Logo"
+            className="md:h-20 object-contain"
+            style={{height: '110px' }}
+          />
+        </NavLink>
 
           {/* Desktop Links */}
           <div className="space-x-6 hidden md:flex">

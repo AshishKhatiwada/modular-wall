@@ -80,7 +80,7 @@ export default function Services() {
         <img
           src={heroImg}
           alt="Services Hero"
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover brightness-125"
         />
         <div className="absolute inset-0 bg-black/50"></div>
 
