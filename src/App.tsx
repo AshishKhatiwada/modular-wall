@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import logo from "./assets/logo.png"; // Ensure you have a logo image in the assets folder
 import mainLogo from "./assets/mainlogo.png"; // Ensure you have a logo image in the assets folder
-
+import generalLogo from "./assets/general-carrying-logo.png"; // Ensure you have a logo image in the assets folder
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -154,6 +154,11 @@ export default function App() {
         />
         <img
           src={mainLogo}
+          alt="Perth Fencing Specialists Logo"
+          className="w-32 max-w-full h-auto mx-auto md:mx-0"
+        />
+         <img
+          src={generalLogo}
           alt="Perth Fencing Specialists Logo"
           className="w-32 max-w-full h-auto mx-auto md:mx-0"
         />
