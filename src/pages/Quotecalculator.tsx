@@ -1,11 +1,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+// 1. Define a type for the estimate
+interface Estimate {
+  wallType: string;
+  length: string; // you can change to number if you parse input
+  height: string; // same here
+  total: string;  // total is a string because you used toFixed(2)
+}
+
 export default function QuoteCalculator() {
   const [wallType, setWallType] = useState("");
   const [length, setLength] = useState("");
   const [height, setHeight] = useState("");
-  const [estimate, setEstimate] = useState(null);
+
+  // 2. Type the estimate state
+  const [estimate, setEstimate] = useState<Estimate | null>(null);
 
   // Pricing per square meter (AUD)
   const pricing = {
@@ -16,30 +26,30 @@ export default function QuoteCalculator() {
     "EnduroMax®": 800,
   };
 
-const handleQuote = (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleQuote = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  if (!wallType || !length || !height) {
-    alert("Please fill all fields.");
-    return;
-  }
+    if (!wallType || !length || !height) {
+      alert("Please fill all fields.");
+      return;
+    }
 
-  if (!(wallType in pricing)) {
-    alert("Please select a valid wall type.");
-    return;
-  }
+    if (!(wallType in pricing)) {
+      alert("Please select a valid wall type.");
+      return;
+    }
 
-  const rate = pricing[wallType as keyof typeof pricing]; // ✅ TS-safe
-  const area = parseFloat(length) * parseFloat(height);
-  const total = area * rate;
+    const rate = pricing[wallType as keyof typeof pricing];
+    const area = parseFloat(length) * parseFloat(height);
+    const total = area * rate;
 
-  setEstimate({
-    wallType,
-    length,
-    height,
-    total: total.toFixed(2),
-  });
-};
+    setEstimate({
+      wallType,
+      length,
+      height,
+      total: total.toFixed(2),
+    });
+  };
 
   return (
     <section className="py-16 bg-gray-50 text-center px-6">
