@@ -9,10 +9,12 @@ import ModularWalls from "./pages/ModularWalls";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import logo from "./assets/logo.png"; // Ensure you have a logo image in the assets folder
-import mainLogo from "./assets/mainlogo.png"; // Ensure you have a logo image in the assets folder
-import generalLogo from "./assets/general-carrying-logo.png"; // Ensure you have a logo image in the assets folder
 import QuoteCalculator from "./pages/Quotecalculator";
+
+import logo from "./assets/logo.png";
+import mainLogo from "./assets/mainlogo.png";
+import generalLogo from "./assets/general-carrying-logo.png";
+
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,7 +25,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = ["Home", "Services", "ModularWalls", "Gallery", "About", "Contact"];
+  const links = ["Home", "Services", "ModularWalls", "Gallery", "About", "Contact", "Quote"];
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
@@ -38,37 +40,24 @@ export default function App() {
       >
         <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
-        <NavLink to="/" className="flex items-center">
-          <img
-            src={mainLogo}
-            alt="Perth Fencing Specialists Logo"
-            className="md:h-15 object-contain"
-            style={{height: '100px' }}
-          />
-        </NavLink>
+          <NavLink to="/" className="flex items-center">
+            <img src={mainLogo} alt="Logo" className="md:h-15 object-contain" style={{ height: "100px" }} />
+          </NavLink>
 
           {/* Desktop Links */}
           <div className="space-x-6 hidden md:flex">
             {links.map((link) => (
-              <motion.div
-                key={link}
-                whileHover={{ y: -3, scale: 1.05 }}
-                className="inline-block relative group"
-              >
+              <motion.div key={link} whileHover={{ y: -3, scale: 1.05 }} className="inline-block relative group">
                 <NavLink to={`/${link === "Home" ? "" : link.toLowerCase()}`}>
                   {link}
                 </NavLink>
-                {/* Underline animation */}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
               </motion.div>
             ))}
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden px-2 py-1 border rounded"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
+          {/* Mobile Menu Button */}
+          <button className="md:hidden px-2 py-1 border rounded" onClick={() => setMobileOpen(!mobileOpen)}>
             ☰
           </button>
         </div>
@@ -77,7 +66,6 @@ export default function App() {
         <AnimatePresence>
           {mobileOpen && (
             <>
-              {/* Backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.5 }}
@@ -86,7 +74,6 @@ export default function App() {
                 onClick={() => setMobileOpen(false)}
               />
 
-              {/* Sliding Panel */}
               <motion.div
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
@@ -94,15 +81,9 @@ export default function App() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white z-50 shadow-2xl p-6 flex flex-col"
               >
-                {/* Close Button */}
-                <button
-                  className="self-end mb-6 text-2xl font-bold"
-                  onClick={() => setMobileOpen(false)}
-                >
+                <button className="self-end mb-6 text-2xl font-bold" onClick={() => setMobileOpen(false)}>
                   ×
                 </button>
-
-                {/* Menu Links */}
                 <div className="flex flex-col space-y-4 bg-gray-800 p-4 rounded-lg shadow-lg">
                   {links.map((link, i) => (
                     <motion.div
@@ -137,7 +118,7 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-           <Route path="/quote" element={<QuoteCalculator />} />
+          <Route path="/quote" element={<QuoteCalculator />} />
         </Routes>
       </div>
 
@@ -149,21 +130,9 @@ export default function App() {
         className="bg-gray-900 text-gray-300 text-center py-6"
       >
         <div className="mb-4 grid-col-2 gap-4 md:flex md:justify-center md:items-center space-y-4 md:space-y-0">
-          <img
-          src={logo}
-          alt="Perth Fencing Specialists Logo"
-          className="w-32 max-w-full h-auto mx-auto md:mx-0"
-        />
-        <img
-          src={mainLogo}
-          alt="Perth Fencing Specialists Logo"
-          className="w-32 max-w-full h-auto mx-auto md:mx-0"
-        />
-         <img
-          src={generalLogo}
-          alt="Perth Fencing Specialists Logo"
-          className="w-32 max-w-full h-auto mx-auto md:mx-0"
-        />
+          <img src={logo} alt="Logo" className="w-32 max-w-full h-auto mx-auto md:mx-0" />
+          <img src={mainLogo} alt="Logo" className="w-32 max-w-full h-auto mx-auto md:mx-0" />
+          <img src={generalLogo} alt="Logo" className="w-32 max-w-full h-auto mx-auto md:mx-0" />
         </div>
         <p>{new Date().getFullYear()} Perth Fencing Specialists. All rights reserved.</p>
       </motion.footer>
