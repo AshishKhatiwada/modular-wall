@@ -65,7 +65,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <motion.section
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="relative h-screen w-full flex items-center justify-center overflow-hidden"
@@ -78,7 +78,7 @@ export default function Home() {
           muted
           playsInline
         />
-        
+
         <div className="relative text-center text-white px-4 max-w-3xl">
            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-red-600 animate-pulse">
             PERTH
