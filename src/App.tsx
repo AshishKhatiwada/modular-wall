@@ -42,7 +42,7 @@ export default function App() {
             src={mainLogo}
             alt="Perth Fencing Specialists Logo"
             className="md:h-15 object-contain"
-            style={{height: '110px' }}
+            style={{height: '100px' }}
           />
         </NavLink>
 
