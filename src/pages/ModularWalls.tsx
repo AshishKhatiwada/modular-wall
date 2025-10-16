@@ -244,7 +244,7 @@ export default function ModularWalls() {
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          href="/contact"
+          href="/quote"
           className="bg-white text-green-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition"
         >
           Get a Free Quote

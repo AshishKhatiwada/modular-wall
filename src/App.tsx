@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import logo from "./assets/logo.png"; // Ensure you have a logo image in the assets folder
 import mainLogo from "./assets/mainlogo.png"; // Ensure you have a logo image in the assets folder
 import generalLogo from "./assets/general-carrying-logo.png"; // Ensure you have a logo image in the assets folder
+import QuoteCalculator from "./pages/Quotecalculator";
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -136,6 +137,7 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+           <Route path="/quote" element={<QuoteCalculator />} />
         </Routes>
       </div>
 
