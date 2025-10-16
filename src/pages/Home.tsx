@@ -78,8 +78,7 @@ export default function Home() {
           muted
           playsInline
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/50"></div>
-
+        
         <div className="relative text-center text-white px-4 max-w-3xl">
            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-red-600 animate-pulse">
             PERTH

@@ -41,7 +41,7 @@ export default function App() {
           <img
             src={mainLogo}
             alt="Perth Fencing Specialists Logo"
-            className="md:h-20 object-contain"
+            className="md:h-15 object-contain"
             style={{height: '110px' }}
           />
         </NavLink>
