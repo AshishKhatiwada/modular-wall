@@ -39,12 +39,12 @@ export default function Gallery() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden"
+        className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden brightness-125"
       >
         <img
           src={heroImg}
           alt="Gallery Hero"
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover brightness-125"
         />
         <div className="absolute inset-0 bg-black/50"></div>
 
